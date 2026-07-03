@@ -1,15 +1,16 @@
 # Quick Start
 
-## Install in Claude Cowork
-1. Open Cowork's plugin/marketplace settings.
-2. Choose **Add from repository** and paste: `https://github.com/allNeurons-AI/mini-mike`
-3. Install the `mini-mike` plugin.
+## Install in Claude Cowork (or chat on web / Claude Desktop)
+1. Open the **Cowork** tab, then **Customize** in the left sidebar (in chat on web/Desktop, open **Customize** directly).
+2. Go to the **Plugins** tab → **Personal plugins** → click **+** → **Add marketplace** → **Add from a repository**.
+3. Enter the repository: `allNeurons-AI/mini-mike` (or the full URL, `https://github.com/allNeurons-AI/mini-mike`).
+4. Click **Browse plugins**, find `mini-mike`, and click **Install**.
 
 ## Install in Claude Code
 
 1. **Add the marketplace:**
    ```
-   /plugin marketplace add https://github.com/allNeurons-AI/mini-mike
+   /plugin marketplace add allNeurons-AI/mini-mike
    ```
 
 2. **Install the plugin:**
@@ -18,7 +19,7 @@
    ```
    (Both the plugin and the marketplace it lives in are named `mini-mike` — that repeated name is expected, not a typo.)
 
-3. **Restart Claude Code.** Not optional — the plugin isn't live until you restart.
+3. **Activate it:** run `/reload-plugins` to pick up the change without restarting, or just restart Claude Code.
 
 4. **Try a skill:**
    ```
@@ -28,9 +29,9 @@
 
 5. **CoC diligence:** when the parent skill's Phase 3.5 gate asks whether you want the Change of Control / Transfer deep-dive, say yes and it hands off to `mm-COC-Tabular-Review` automatically, writing Sheet 2 into the same workbook. You can also invoke `mm-COC-Tabular-Review` directly for a standalone CoC deep-dive.
 
-## Install user-scoped, not project-scoped
+## In Claude Code: install user-scoped, not project- or local-scoped
 
-If asked whether to install for this project only or for all projects (user scope), pick **user scope**. Project scope blocks the plugin from reading files outside the project folder — your lease PDFs in Downloads, a client file in Dropbox. User scope doesn't grant extra file access; it just lets the plugin work from any folder.
+If asked to choose an installation scope, pick **user scope** (install for yourself across all projects). Project and local scope limit the plugin to the current project folder, so it can't reach files outside it — your lease PDFs in Downloads, a client file in Dropbox. User scope doesn't grant extra file access; it just lets the plugin work from any folder. (This scope choice is a Claude Code concept — Cowork/chat installs don't ask this.)
 
 ## What's in the box
 
@@ -38,7 +39,7 @@ If asked whether to install for this project only or for all projects (user scop
 
 ## Stuck?
 
-- **"Command not found" after install** → restart Claude Code/Cowork.
+- **"Command not found" after install** → in Claude Code, run `/reload-plugins`; if that doesn't pick it up, restart. In Cowork/chat, refresh or start a new session.
 - **"I can't read [file]"** → most often means the plugin is project-scoped and the file is outside the project folder. Reinstall user-scoped.
 - **CoC gate doesn't appear** → it only fires after Phase 1/Sheet 1 completes for the current batch; make sure the parent skill finished intake before expecting the Phase 3.5 prompt.
 - **Protected/password-locked PDF** → the skill will pause and ask for the password or whether to skip that file — this is expected behavior, not a bug.

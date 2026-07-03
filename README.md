@@ -6,15 +6,6 @@ Built by allNeurons — a team of MAANG engineers and practicing lawyers.
 
 **Every output is a draft for attorney review — cited, flagged, and gated — not a legal conclusion.** The skills read the documents, extract the fields, and cite every cell back to the source. A lawyer reviews, verifies, and takes responsibility. That review is faster because of this plugin; it is not skipped because of it.
 
-## The problem
-
-Two failure modes in legal AI today:
-
-1. **Narrow wrapper products** (Harvey, CoCounsel, etc.) — purpose-built for specific workflows, but limited in scope, expensive, and locked to a vendor's roadmap.
-2. **General AI platforms** (Claude) — flexible and powerful, but not accurate enough out of the box for lawyers to trust with real work. Teams that try to improve them solo burn hours and tokens with no way to share what they've learned.
-
-Mini-Mike closes the gap: a skill layer on top of a general platform, battle-tested for legal workflows, designed to improve with every use and shared across the community instead of siloed per firm.
-
 ## Who this is for
 
 | Role | Use it for |
@@ -25,28 +16,30 @@ Mini-Mike closes the gap: a skill layer on top of a general platform, battle-tes
 
 ## Install
 
-### Claude Cowork
+### Claude Cowork (or chat on web / Claude Desktop)
 
-1. Open Cowork's plugin / marketplace settings.
-2. Choose **Add from repository** and paste: `https://github.com/allNeurons-AI/mini-mike`
-3. Install the `mini-mike` plugin.
-4. Try it: upload a contract and ask for a review, or run `/mini-mike:mm-Tabular-Review`.
+1. Open the **Cowork** tab, then open **Customize** in the left sidebar. (In chat on web or Desktop, just open **Customize** directly.)
+2. Go to the **Plugins** tab.
+3. Under **Personal plugins**, click **+**, then **Add marketplace** → **Add from a repository**.
+4. Enter the repository: `allNeurons-AI/mini-mike` (or the full URL, `https://github.com/allNeurons-AI/mini-mike`).
+5. Click **Browse plugins**, find `mini-mike`, and click **Install**.
+6. Try it: upload a contract and ask for a review, or type `/` to find `mini-mike:mm-Tabular-Review`.
 
 ### Claude Code
 
 1. **Add the marketplace:**
    ```
-   /plugin marketplace add https://github.com/allNeurons-AI/mini-mike
+   /plugin marketplace add allNeurons-AI/mini-mike
    ```
 2. **Install the plugin:**
    ```
    /plugin install mini-mike@mini-mike
    ```
    (Both the plugin and the marketplace it lives in are named `mini-mike` — that repeated name is expected, not a typo.)
-3. **Restart Claude Code.** Not optional — the plugin isn't live until you restart.
+3. **Activate it:** run `/reload-plugins` to pick up the change without restarting, or just restart Claude Code.
 4. **Try a skill:** `/mini-mike:mm-Tabular-Review`, or just upload a contract and ask for a review.
 
-Install **user-scoped, not project-scoped** — project scope blocks the plugin from reading files outside the project folder (your contract PDFs in Downloads, a client file in Dropbox). User scope doesn't grant extra file access; it just lets the plugin work from any folder.
+In Claude Code, when asked to choose an installation scope, pick **user scope** (install for yourself across all projects) rather than project or local scope — those limit the plugin to reading files inside that one project folder (your contract PDFs in Downloads, a client file in Dropbox, wouldn't be reachable). Cowork/chat installs don't ask this.
 
 Full walkthrough and troubleshooting: [QUICKSTART.md](./QUICKSTART.md).
 
