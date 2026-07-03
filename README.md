@@ -44,9 +44,15 @@ Full walkthrough and troubleshooting: [QUICKSTART.md](./QUICKSTART.md).
 
 ## First run
 
-No setup required. Mini-Mike v0.1 has no cold-start interview or practice profile yet — both skills are self-contained. Install the plugin and either upload a contract and ask for a review, or run `/mini-mike:mm-tabular-review` directly.
+1. **Start a new chat or task** wherever you installed the plugin (Cowork, chat on web/Desktop, or Claude Code).
+2. **Upload the contract(s)** you want reviewed — one file or a batch, drag-and-drop or attach.
+3. **Ask for a review**, e.g. "review this contract" or "give me a tabular review of these" — or invoke it directly with `/mini-mike:mm-tabular-review`.
+4. **Answer the setup question:** the skill asks whether to use the default General Key Terms (20 columns) or your own custom key terms. Pick default for your first run.
+5. **If a file is password-protected**, the skill pauses and asks for the password or whether to skip that file.
+6. **Partway through, it asks about Change of Control:** say yes for the CoC deep-dive (adds Sheet 2, and asks the same default-vs-custom question for its 19 fields), or no to skip straight to the summary.
+7. **Get your workbook:** an Excel file with General Key Terms (Sheet 1), CoC analysis if you said yes (Sheet 2), and a Summary of deal-team action items (Sheet 3) — every cell cited back to the source document.
 
-A config-driven customization step (practice profile + interview) is on the roadmap — see "How it learns" below.
+Since there's no saved config yet, every run asks the default-vs-custom questions fresh — see "How it learns" below for the roadmap on that.
 
 ## Commands
 
@@ -66,19 +72,9 @@ None. Both skills operate on documents you upload or point them at directly (loc
 | **mm-tabular-review** | Parent | Reviews one or more commercial contracts, produces a structured Excel workbook: General Key Terms (Sheet 1, section-cited) + Summary (Sheet 3). Asks up front: default key terms or custom. Handles password-protected files and contracts with amendments. |
 | **mm-coc-tabular-review** | Child (of `mm-tabular-review`) | Change of Control / Transfer Key-Terms Analysis (Sheet 2) — one answer row + one citation row per document across 19 M&A-critical fields, or custom fields. Derives the CoC risk rating consumed by Sheet 3. |
 
-## Interactive commands vs. scheduled agents
-
-Nothing here yet. The `agents/` folder is scaffolded but empty in v0.1 — the commands above are the whole interaction model for now. Planned agents (Playbook Monitor, Renewal Watcher, Data Room Watcher) are tracked in the Roadmap below; they'll show up in this section once they ship.
-
-## Integrations
-
-`.mcp.json` lists Google Drive, Slack, and DocuSign as recommended connectors — but neither skill calls a connector directly yet. Today, both skills work purely on documents you upload or point them at. The connectors are there so future skills/agents (e.g., pulling a lease packet straight from Drive, posting a completed review to a Slack channel) don't require reconfiguring the plugin. Microsoft 365 is planned but not wired — no verified public MCP endpoint yet.
-
 ## How it learns
 
 Today: both skills are plain markdown under `skills/<name>/SKILL.md`. There's no build step — fork the file and edit the steps, the gates, the column definitions, or the output format directly for house style. That's the whole customization mechanism right now.
-
-Planned: a cold-start interview + practice profile at `CLAUDE.md` (already scaffolded as a placeholder — see that file). Once it ships, skills will read tuned defaults (house key terms, escalation routing, output destination) instead of asking at the start of every run.
 
 Broader mechanism: Mini-Mike is built to be community-driven — when a team finds a gap or a better default, that improvement is meant to fold back into the shipped skill for everyone, not stay siloed in one firm's fork. The contribution path for that is in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
@@ -89,21 +85,16 @@ Broader mechanism: Mini-Mike is built to be community-driven — when a team fin
 - Password-protected PDFs: the skill pauses mid-batch and asks for the password or whether to skip that file. Expected behavior, not a bug.
 - Documents are processed in batches of five by default.
 
-## Accuracy (internal evals)
-
-- 10% better than competing skills overall (91% accuracy on Change of Control provisions for M&A work), per initial launch evals.
-- A later eval round reported 39% better than Claude Cowork without the skill, 30% better than competing skills, and 93% accuracy on CoC — from the same testing effort, slightly different cut. Reconcile which figure to cite externally before using in marketing.
-
 ## Roadmap
 
-More sub-skills and contract types, driven by community/practitioner feedback. Planned next:
+More sub-skills, driven by community/practitioner feedback. 
+Planned next:
 
 - **Due Diligence Issue Extraction** — read VDR docs, extract issues per house categories/materiality thresholds into house memo format.
 - **Renewal Tracker** — surfaces contracts with upcoming cancel-by deadlines from a maintained renewal register.
 - **Entity Compliance** — filing deadlines by entity/jurisdiction, 30/60/90-day lookahead, CSV export.
 - **Amendment History** — traces how a contract changed across a base agreement + amendments.
 - **Board Minutes** — drafts board/committee minutes from calendar-detected meetings + agenda materials.
-- **Cold-start interview + practice profile** — populates `CLAUDE.md` so skills stop asking the same setup questions every run.
 
 Planned agents:
 
@@ -111,16 +102,15 @@ Planned agents:
 - **Renewal Watcher** — scheduled weekly post of upcoming renewals to a configured channel.
 - **Data Room Watcher** — monitors a VDR for new uploads, posts closing checklist status.
 
-Planned connectors: Google Drive ✅ (recommended, not yet called), Slack ✅ (recommended, not yet called), DocuSign ✅ (recommended, not yet called), Microsoft 365 (pending).
+Planned connectors: 
+Google Drive, Slack, DocuSign, Microsoft 365.
 
 ## Making it yours
-
-Mini-Mike ships as reference skills, not a black box. Today, with no cold-start interview or practice profile yet (see "How it learns" above), the customization surface is the skill files themselves:
 
 - **Fork a skill for house style.** Every skill is a markdown file under `skills/<name>/SKILL.md`. Edit the steps, the gates, the column/field definitions, or the output format directly.
 - **Swap or add connectors.** Point `.mcp.json` at your own Drive, Slack, DocuSign, or other MCP-compatible tool. Neither shipped skill calls a connector yet, so nothing breaks if you leave it as-is — this is forward-provisioning for skills and agents that will use them.
 - **Add your own field/column set.** Both skills have a Phase 0 gate that asks default vs. custom fields — if your house default differs from the shipped one (e.g., the CoC skill's retail-lease-shaped 19 fields), answer with your own set each run, or fork the skill to make your set the default.
-- **Track your changes against upstream.** Since this repo may get community contributions (see Contributing below), keep your house fork on a branch or a private overlay so upstream updates don't silently clobber your edits.
+- **Track your changes against upstream.** Since this repo will get community contributions (see Contributing below), keep your house fork on a branch or a private overlay so upstream updates don't silently clobber your edits.
 
 No build step. Everything is markdown and JSON.
 

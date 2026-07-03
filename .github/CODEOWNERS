@@ -3,9 +3,5 @@
 # Requires an allNeurons maintainer review on every PR that touches these paths,
 # before it can be merged to main. This is the mechanism referred to in
 # CONTRIBUTING.md's "Nothing goes live without allNeurons review."
-#
-# REPLACE the placeholder handles below with real allNeurons GitHub usernames
-# or a team handle (e.g. @allneurons/maintainers) once this repo is created,
-# and enable branch protection on `main` requiring CODEOWNERS review before merge.
 
-*                            @allneurons/maintainers
+*                            @rajatsharma29

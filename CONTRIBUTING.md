@@ -21,10 +21,6 @@ If you want to test a change in your own environment before opening a PR, do tha
 4. The skill becomes invokable as `/mini-mike:<skill-name>` once installed.
 5. If a skill is meant to be reference material only (not something a user should trigger directly), mark it `user-invocable: false` in the frontmatter once that convention is needed — not used by either shipped skill today.
 
-## Adding a new agent
-
-Agents live under `agents/<name>.md` — the folder exists but is empty in v0.1. When the first agent is added, use frontmatter with `name`, `description`, `model`, and `tools`, a defined schedule (cron-style or "on-demand"), and a body describing what it watches and what it does when triggered.
-
 ## Style notes
 
 - No build step. Everything is markdown and JSON — if you can edit a text file, you can contribute.

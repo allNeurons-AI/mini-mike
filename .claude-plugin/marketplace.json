@@ -9,7 +9,7 @@
     {
       "name": "mini-mike",
       "source": "./",
-      "description": "Reviews commercial contracts and produces a structured Excel workbook: a General Key Terms tabular review (parent skill, mm-tabular-review) with section citations, plus an optional Change of Control / Transfer deep-dive (child skill, mm-coc-tabular-review) for M&A diligence (91-93% accuracy on CoC in internal evals). Supports batch processing, password-protected files, and contracts with amendments. More contract types and sub-skills ship as community feedback comes in.",
+      "description": "Reviews commercial contracts and produces a structured Excel workbook: a General Key Terms tabular review (parent skill, mm-tabular-review) with section citations, plus an optional Change of Control / Transfer deep-dive (child skill, mm-coc-tabular-review) for M&A diligence. Supports batch processing, password-protected files, and contracts with amendments.",
       "author": {
         "name": "allNeurons"
       }
