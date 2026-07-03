@@ -14,8 +14,9 @@
 
 2. **Install the plugin:**
    ```
-   /plugin install mini-mike@allneurons-minimike
+   /plugin install mini-mike@mini-mike
    ```
+   (Both the plugin and the marketplace it lives in are named `mini-mike` — that repeated name is expected, not a typo.)
 
 3. **Restart Claude Code.** Not optional — the plugin isn't live until you restart.
 

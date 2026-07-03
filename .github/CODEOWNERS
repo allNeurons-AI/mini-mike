@@ -9,5 +9,3 @@
 # and enable branch protection on `main` requiring CODEOWNERS review before merge.
 
 *                            @allneurons/maintainers
-/mini-mike/                  @allneurons/maintainers
-/.claude-plugin/             @allneurons/maintainers
