@@ -23,11 +23,11 @@
 
 4. **Try a skill:**
    ```
-   /mini-mike:mm-Tabular-Review
+   /mini-mike:mm-tabular-review
    ```
    or just upload one or more contracts and ask for a review — the skill triggers on natural-language phrasing too, no slash command required. It asks up front whether to use the default key terms or custom ones.
 
-5. **CoC diligence:** when the parent skill's Phase 3.5 gate asks whether you want the Change of Control / Transfer deep-dive, say yes and it hands off to `mm-COC-Tabular-Review` automatically, writing Sheet 2 into the same workbook. You can also invoke `mm-COC-Tabular-Review` directly for a standalone CoC deep-dive.
+5. **CoC diligence:** when the parent skill's Phase 3.5 gate asks whether you want the Change of Control / Transfer deep-dive, say yes and it hands off to `mm-coc-tabular-review` automatically, writing Sheet 2 into the same workbook. You can also invoke `mm-coc-tabular-review` directly for a standalone CoC deep-dive.
 
 ## In Claude Code: install user-scoped, not project- or local-scoped
 
@@ -35,7 +35,7 @@ If asked to choose an installation scope, pick **user scope** (install for yours
 
 ## What's in the box
 
-1 plugin (`mini-mike`), 2 skills (`mm-Tabular-Review` parent, `mm-COC-Tabular-Review` child), 3 recommended connectors (Google Drive, Slack, DocuSign). Full reference in [README.md](README.md).
+1 plugin (`mini-mike`), 2 skills (`mm-tabular-review` parent, `mm-coc-tabular-review` child), 3 recommended connectors (Google Drive, Slack, DocuSign). Full reference in [README.md](README.md).
 
 ## Stuck?
 

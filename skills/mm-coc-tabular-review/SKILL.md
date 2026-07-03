@@ -1,11 +1,11 @@
 ---
-name: mm-COC-Tabular-Review
-description: "Child skill of 'mm-Tabular-Review'. Produces the Change of Control / Transfer Key-Terms Analysis (Sheet 2) of the M&A contract review workbook: one answer row and one citation row per document across 19 short-form M&A-critical fields (or the user's own custom fields), covering consent triggers, public-company exceptions, permitted transfers, take-private treatment, rent escalation, fees, termination/recapture rights, and open questions. Before extraction begins, asks the user whether to use the default 19 fields or supply custom ones. Normally invoked automatically by the parent skill 'mm-Tabular-Review' when the user confirms the CoC deep-dive at its Phase 3.5 gate — trigger this skill directly only if the user explicitly asks for a Change of Control, transfer, or assignment deep-dive on contracts without going through the parent skill first."
+name: mm-coc-tabular-review
+description: "Child skill of 'mm-tabular-review'. Produces the Change of Control / Transfer Key-Terms Analysis (Sheet 2) of the M&A contract review workbook: one answer row and one citation row per document across 19 short-form M&A-critical fields (or the user's own custom fields), covering consent triggers, public-company exceptions, permitted transfers, take-private treatment, rent escalation, fees, termination/recapture rights, and open questions. Before extraction begins, asks the user whether to use the default 19 fields or supply custom ones. Normally invoked automatically by the parent skill 'mm-tabular-review' when the user confirms the CoC deep-dive at its Phase 3.5 gate — trigger this skill directly only if the user explicitly asks for a Change of Control, transfer, or assignment deep-dive on contracts without going through the parent skill first."
 ---
 
 # M&A Contract Review — Change of Control / Transfer Key Terms (Child Skill)
 
-This is the **child skill**. It is normally invoked by the parent skill, `mm-Tabular-Review`,
+This is the **child skill**. It is normally invoked by the parent skill, `mm-tabular-review`,
 after the user confirms YES at that skill's Phase 3.5 CoC Gate. It owns Sheet 2 of the shared
 workbook: field definitions, extraction discipline, output formatting, and the CoC risk rating
 that feeds the parent skill's Sheet 3 Summary.
@@ -25,7 +25,7 @@ that feeds the parent skill's Sheet 3 Summary.
 **Standalone use:** if a user invokes this skill directly (e.g., "run a Change of Control review
 on these leases") without going through the parent skill, there is no Sheet 1. In that case, treat
 Phase 1 (Intake, from the parent skill) as still required — read the parent skill's Phase 1 rules
-at `/mnt/skills/user/mm-Tabular-Review/SKILL.md` for document intake, password handling, and
+at `/mnt/skills/user/mm-tabular-review/SKILL.md` for document intake, password handling, and
 batching — but build a workbook containing only Sheet 2 and a minimal Summary sheet, saved to
 `/mnt/user-data/outputs/<matter_name>_CoC_Review.xlsx`.
 
@@ -669,6 +669,6 @@ verify before use." Maximum 150 words, plain prose.
   flagged (Field 18 or its custom equivalent), never resolved by assumption.
 - **Does not put citations inside answer cells.** Citations belong only in the citation row.
 - **Does not create its own workbook when invoked as a child.** It writes Sheet 2 into the same
-  workbook the parent skill, `mm-Tabular-Review`, already created for Sheet 1. It only creates its
+  workbook the parent skill, `mm-tabular-review`, already created for Sheet 1. It only creates its
   own workbook when explicitly run standalone, per "Standalone use" above.
 - **Does not produce Google Sheets output.** The deliverable is always an Excel `.xlsx` file.

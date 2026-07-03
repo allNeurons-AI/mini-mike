@@ -4,7 +4,7 @@
 
 This file is where future Mini-Mike skills and agents will read/write shared configuration: house output format, escalation contacts, matter workspace paths, and similar practice-level settings.
 
-The current skills in this plugin (`mm-Tabular-Review`, `mm-COC-Tabular-Review`) are self-contained and do not read from this file yet. It's included now so the folder layout matches the target structure and nothing has to be restructured later when a cold-start-interview / customize skill is added.
+The current skills in this plugin (`mm-tabular-review`, `mm-coc-tabular-review`) are self-contained and do not read from this file yet. It's included now so the folder layout matches the target structure and nothing has to be restructured later when a cold-start-interview / customize skill is added.
 
 ## Roadmap sections to fill in here (see plugin README for full list)
 

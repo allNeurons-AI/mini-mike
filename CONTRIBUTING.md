@@ -16,8 +16,8 @@ If you want to test a change in your own environment before opening a PR, do tha
 ## Adding a new skill
 
 1. Create `skills/<skill-name>/SKILL.md`.
-2. Use the same YAML frontmatter as the existing skills: `name` (matches the folder name exactly) and `description` (this is the trigger signal Claude uses to decide when to invoke the skill — keep it specific and reasonably tight; look at `mm-Tabular-Review`'s and `mm-COC-Tabular-Review`'s descriptions for the level of detail that works).
-3. If the skill is a parent/child pair (like the two shipped today), say so explicitly in both descriptions and cross-reference the sibling skill by its exact folder name, the way `mm-Tabular-Review` and `mm-COC-Tabular-Review` reference each other. The model relies on that name match to hand off correctly.
+2. Use the same YAML frontmatter as the existing skills: `name` (matches the folder name exactly) and `description` (this is the trigger signal Claude uses to decide when to invoke the skill — keep it specific and reasonably tight; look at `mm-tabular-review`'s and `mm-coc-tabular-review`'s descriptions for the level of detail that works).
+3. If the skill is a parent/child pair (like the two shipped today), say so explicitly in both descriptions and cross-reference the sibling skill by its exact folder name, the way `mm-tabular-review` and `mm-coc-tabular-review` reference each other. The model relies on that name match to hand off correctly.
 4. The skill becomes invokable as `/mini-mike:<skill-name>` once installed.
 5. If a skill is meant to be reference material only (not something a user should trigger directly), mark it `user-invocable: false` in the frontmatter once that convention is needed — not used by either shipped skill today.
 

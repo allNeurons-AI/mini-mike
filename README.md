@@ -10,9 +10,9 @@ Built by allNeurons — a team of MAANG engineers and practicing lawyers.
 
 | Role | Use it for |
 |---|---|
-| **In-house counsel / GC** reviewing vendor, customer, or lease contracts | `mm-Tabular-Review` for the General Key Terms pass |
-| **M&A counsel / real estate counsel** running lease-heavy diligence | `mm-Tabular-Review` + the `mm-COC-Tabular-Review` Change of Control deep-dive |
-| **Legal ops / paralegals** prepping diligence binders or contract summaries at volume | `mm-Tabular-Review` batch mode (5 documents at a time) |
+| **In-house counsel / GC** reviewing vendor, customer, or lease contracts | `mm-tabular-review` for the General Key Terms pass |
+| **M&A counsel / real estate counsel** running lease-heavy diligence | `mm-tabular-review` + the `mm-coc-tabular-review` Change of Control deep-dive |
+| **Legal ops / paralegals** prepping diligence binders or contract summaries at volume | `mm-tabular-review` batch mode (5 documents at a time) |
 
 ## Install
 
@@ -23,7 +23,7 @@ Built by allNeurons — a team of MAANG engineers and practicing lawyers.
 3. Under **Personal plugins**, click **+**, then **Add marketplace** → **Add from a repository**.
 4. Enter the repository: `allNeurons-AI/mini-mike` (or the full URL, `https://github.com/allNeurons-AI/mini-mike`).
 5. Click **Browse plugins**, find `mini-mike`, and click **Install**.
-6. Try it: upload a contract and ask for a review, or type `/` to find `mini-mike:mm-Tabular-Review`.
+6. Try it: upload a contract and ask for a review, or type `/` to find `mini-mike:mm-tabular-review`.
 
 ### Claude Code
 
@@ -37,7 +37,7 @@ Built by allNeurons — a team of MAANG engineers and practicing lawyers.
    ```
    (Both the plugin and the marketplace it lives in are named `mini-mike` — that repeated name is expected, not a typo.)
 3. **Activate it:** run `/reload-plugins` to pick up the change without restarting, or just restart Claude Code.
-4. **Try a skill:** `/mini-mike:mm-Tabular-Review`, or just upload a contract and ask for a review.
+4. **Try a skill:** `/mini-mike:mm-tabular-review`, or just upload a contract and ask for a review.
 
 In Claude Code, when asked to choose an installation scope, pick **user scope** (install for yourself across all projects) rather than project or local scope — those limit the plugin to reading files inside that one project folder (your contract PDFs in Downloads, a client file in Dropbox, wouldn't be reachable). Cowork/chat installs don't ask this.
 
@@ -45,7 +45,7 @@ Full walkthrough and troubleshooting: [QUICKSTART.md](./QUICKSTART.md).
 
 ## First run
 
-No setup required. Mini-Mike v0.1 has no cold-start interview or practice profile yet — both skills are self-contained. Install the plugin and either upload a contract and ask for a review, or run `/mini-mike:mm-Tabular-Review` directly.
+No setup required. Mini-Mike v0.1 has no cold-start interview or practice profile yet — both skills are self-contained. Install the plugin and either upload a contract and ask for a review, or run `/mini-mike:mm-tabular-review` directly.
 
 A config-driven customization step (practice profile + interview) is on the roadmap — see "How it learns" below.
 
@@ -53,8 +53,8 @@ A config-driven customization step (practice profile + interview) is on the road
 
 | Command | Does |
 |---|---|
-| `/mini-mike:mm-Tabular-Review` | General Key Terms tabular review (Sheet 1, 20 columns) + Summary sheet (Sheet 3) of deal-team action items. Batches documents in groups of five. Offers a Change of Control hand-off partway through. |
-| `/mini-mike:mm-COC-Tabular-Review` | Change of Control / Transfer deep-dive (Sheet 2), 19 fields. Normally invoked automatically by `mm-Tabular-Review`'s CoC gate; can also be run standalone. |
+| `/mini-mike:mm-tabular-review` | General Key Terms tabular review (Sheet 1, 20 columns) + Summary sheet (Sheet 3) of deal-team action items. Batches documents in groups of five. Offers a Change of Control hand-off partway through. |
+| `/mini-mike:mm-coc-tabular-review` | Change of Control / Transfer deep-dive (Sheet 2), 19 fields. Normally invoked automatically by `mm-tabular-review`'s CoC gate; can also be run standalone. |
 
 ## Prerequisites
 
@@ -64,8 +64,8 @@ None. Both skills operate on documents you upload or point them at directly (loc
 
 | Skill | Type | Purpose |
 |---|---|---|
-| **mm-Tabular-Review** | Parent | Reviews one or more commercial contracts, produces a structured Excel workbook: General Key Terms (Sheet 1, section-cited) + Summary (Sheet 3). Asks up front: default key terms or custom. Handles password-protected files and contracts with amendments. |
-| **mm-COC-Tabular-Review** | Child (of `mm-Tabular-Review`) | Change of Control / Transfer Key-Terms Analysis (Sheet 2) — one answer row + one citation row per document across 19 M&A-critical fields, or custom fields. Derives the CoC risk rating consumed by Sheet 3. |
+| **mm-tabular-review** | Parent | Reviews one or more commercial contracts, produces a structured Excel workbook: General Key Terms (Sheet 1, section-cited) + Summary (Sheet 3). Asks up front: default key terms or custom. Handles password-protected files and contracts with amendments. |
+| **mm-coc-tabular-review** | Child (of `mm-tabular-review`) | Change of Control / Transfer Key-Terms Analysis (Sheet 2) — one answer row + one citation row per document across 19 M&A-critical fields, or custom fields. Derives the CoC risk rating consumed by Sheet 3. |
 
 ## Interactive commands vs. scheduled agents
 
@@ -86,7 +86,7 @@ Broader mechanism: Mini-Mike is built to be community-driven — when a team fin
 ## Notes
 
 - Every extracted cell is a citation-backed **lead**, not a finding. Verify against the source document before it informs a rep, schedule, or memo.
-- `mm-COC-Tabular-Review`'s default 19 fields are shaped for retail/commercial leases (store number, landlord, landlord parent, lease expiry). Accurate out of the box for that use case; for other contract types, use the custom-fields path at the Phase 0 gate until a second default field set ships.
+- `mm-coc-tabular-review`'s default 19 fields are shaped for retail/commercial leases (store number, landlord, landlord parent, lease expiry). Accurate out of the box for that use case; for other contract types, use the custom-fields path at the Phase 0 gate until a second default field set ships.
 - Password-protected PDFs: the skill pauses mid-batch and asks for the password or whether to skip that file. Expected behavior, not a bug.
 - Documents are processed in batches of five by default.
 
@@ -140,7 +140,7 @@ Everything here is markdown and JSON — fork, edit, open a pull request. Full d
 
 ## Status
 
-Early stage — v0.1.0. First skill pair (`mm-Tabular-Review` parent + `mm-COC-Tabular-Review` child) is live.
+Early stage — v0.1.0. First skill pair (`mm-tabular-review` parent + `mm-coc-tabular-review` child) is live.
 
 ## License
 
