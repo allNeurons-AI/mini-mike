@@ -1,0 +1,8 @@
+{
+  "name": "mini-mike",
+  "version": "0.1.0",
+  "description": "Tabular review of commercial contracts (mm-Tabular-Review) producing a General Key Terms Excel workbook with citation-backed extraction, plus a Change of Control / Transfer deep-dive child skill (mm-COC-Tabular-Review) for M&A diligence. Built by allNeurons.",
+  "author": {
+    "name": "allNeurons"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "Google Drive": {
+      "type": "http",
+      "url": "https://drivemcp.googleapis.com/mcp/v1",
+      "title": "Google Drive",
+      "description": "Search, read, and fetch lease/contract documents from Google Drive so tabular review can run directly against a Drive folder."
+    },
+    "Slack": {
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp",
+      "title": "Slack",
+      "description": "Post tabular review / CoC review results and flags to a deal or diligence channel."
+    },
+    "DocuSign": {
+      "type": "http",
+      "url": "https://mcp.docusign.com/mcp",
+      "title": "DocuSign",
+      "description": "Pull executed lease/contract packages and status directly for review."
+    }
+  },
+  "recommendedCategories": [
+    "contract-management",
+    "document-storage",
+    "e-signature",
+    "chat"
+  ],
+  "_roadmap_note": "M365 connector is on the roadmap (see README) but has no public MCP endpoint verified yet -- do not wire up a placeholder URL until confirmed."
+}
