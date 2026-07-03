@@ -2,7 +2,7 @@
 
 Marketplace repo for **Mini-Mike** — allNeurons' AI skill layer for legal work, built to plug into Claude — via Claude Cowork or Claude Code — so lawyers get the precision their work demands without leaving the platform they already use.
 
-A `.claude-plugin/marketplace.json` at the root lists the installable plugin in this repo. Right now that's just `mini-mike`, living in its own `mini-mike/` folder with its own skills, agents, connectors, and config.
+This repo is what you point Claude at to install Mini-Mike (see Install below). Right now it holds one plugin, `mini-mike`, in its own `mini-mike/` folder with its own skills, agents, connectors, and config.
 
 ## What's here
 
