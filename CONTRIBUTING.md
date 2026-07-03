@@ -9,7 +9,7 @@ This is the part that matters most, so it's first: forking and editing your own 
 - `main` is protected. There is no self-merge.
 - `CODEOWNERS` requires an allNeurons review on every PR in this repo.
 - A maintainer may request changes, ask for an eval or a test run, or decline a PR outright — same as any reviewed open-source project.
-- Until a PR is merged, it does not affect anyone who installs `mini-mike@mini-mike` from this repo.
+- Until a PR is merged, it does not affect anyone who installs `mini-mike@allneurons` from this repo.
 
 If you want to test a change in your own environment before opening a PR, do that on a fork or a local branch — no approval needed for your own copy.
 

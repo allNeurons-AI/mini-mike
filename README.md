@@ -33,9 +33,8 @@ Built by allNeurons — a team of MAANG engineers and practicing lawyers.
    ```
 2. **Install the plugin:**
    ```
-   /plugin install mini-mike@mini-mike
+   /plugin install mini-mike@allneurons
    ```
-   (Both the plugin and the marketplace it lives in are named `mini-mike` — that repeated name is expected, not a typo.)
 3. **Activate it:** run `/reload-plugins` to pick up the change without restarting, or just restart Claude Code.
 4. **Try a skill:** `/mini-mike:mm-tabular-review`, or just upload a contract and ask for a review.
 
