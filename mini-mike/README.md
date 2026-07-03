@@ -1,6 +1,6 @@
 # Mini-Mike
 
-Mini-Mike is a set of AI skills built specifically for legal work, plugging into general AI platforms like Claude Cowork so lawyers get the precision their work demands without leaving the platform they already use.
+Mini-Mike is a set of AI skills built specifically for legal work, plugging into Claude — via Claude Cowork or Claude Code — so lawyers get the precision their work demands without leaving the platform they already use.
 
 Built by allNeurons — a team of MAANG engineers and practicing lawyers.
 
