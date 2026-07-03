@@ -25,6 +25,8 @@ Built by allNeurons — a team of MAANG engineers and practicing lawyers.
 5. Click **Browse plugins**, find `mini-mike`, and click **Install**.
 6. Try it: upload a contract and ask for a review, or type `/` to find `mini-mike:mm-tabular-review`.
 
+[Link to Walkthrough Video](https://pragyaallc-my.sharepoint.com/:v:/g/personal/rajat_legalgraph_ai/IQDqV7OciF4IQrLTt-ZF4i90AS1dmlDZ4u5q-_uwdN7WpNs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Hc3pXf)
+
 ### Claude Code
 
 1. **Add the marketplace:**
