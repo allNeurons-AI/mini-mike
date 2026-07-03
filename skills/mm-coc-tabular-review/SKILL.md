@@ -528,11 +528,18 @@ issues.
 
 ### Field 19 — Consent Request
 
-**Answer Retrieval Instruction:** Leave blank.
+**Answer Retrieval Instruction**: Capture any requirements for requesting the Landlord's consent to a Change of Control
+assignment, or other Transfer, including the form of request, required information or documents, fees, timing, or other
+procedural requirements.
 
-**Final Answer Format Instruction:** Leave blank.
+**Final Answer Format Instruction**: One concise paragraph. No numbered lists. No bullet points.
 
-**Permitted Fallback Values:** Leave blank.
+Permitted Fallback Values: Leave blank if the Lease does not specify consent request requirements or if consent is not
+required.
+
+**Good Answer**: The Tenant must submit a written request for the Landlord's consent, pay the Landlord's processing fee,
+provide any information or documentation reasonably requested by the Landlord, and ensure the proposed Transferee executes an
+assumption agreement in a form satisfactory to the Landlord before the Transfer becomes effective.
 
 ---
 
